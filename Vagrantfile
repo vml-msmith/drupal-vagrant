@@ -73,5 +73,12 @@ Vagrant.configure(2) do |config|
       rm -rf /var/www
       ln -fs /vagrant /var/www
     fi
+
+    # -- Percona Install --
+    # msmith: Left out for now.
+    wget https://repo.percona.com/apt/percona-release_0.1-3.$(lsb_release -sc)_all.deb
+    dpkg -i percona-release_0.1-3.$(lsb_release -sc)_all.deb
+    apt-get update
+    apt-get install percona-server-server-5.5 -y
   SHELL
 end
