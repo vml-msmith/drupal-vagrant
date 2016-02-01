@@ -14,7 +14,13 @@ addons:
     sources:
     packages:
       apache2
-
+      mysql-server-5.5
+      libapache2-mod-php5
+      php5-curl
+      php5-gd
+      php5-mcrypt
+      php5-mysql
+      php-apc
 
 before_script:
   - mkdir test
