@@ -21,6 +21,7 @@ addons:
       - php5-mysql
 
 before_script:
-  - mkdir test
+  - sed -i -e "s,/var/www,$(pwd)/web,g" /etc/apache2/sites-available/default
+  - /etc/init.d/apache2 restart
 
 script: echo 'Test'
